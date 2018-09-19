@@ -27,6 +27,7 @@ header {
 .profilepicture img {
   width: 100%;
   max-width: 150px;
+  border-radius: 5px;
   display: block;
 }
 
