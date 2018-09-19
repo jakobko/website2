@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Slogen</title>
+    <link rel="stylesheet" href="slogenstyle.css">
+    <script src="slogenscript.js" charset="utf-8"></script>
+
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+    <section class="flexcontainer">
+      <header>
+        <h1>Slogen</h1>
+        <h3>The slogan generator for startups</h2>
+      </header>
+      <section class="description">
+        <p>Describe what your product is doing with one word</p>
+      </section>
+      <section class="inputfield">
+        <input id="inputbox" type="text" placeholder="Write a word here.." onfocus="(this.placeholder='')" onblur="(this.placeholder='Write a word here..')">
+        <button type="submit" name="button" onclick="buttonEvent()">Create slogan!</button>
+      </section>
+      <p id="textresult"></p>
+      <img id="imageresult"src="" alt="">
+    </section>
+  </body>
+</html>

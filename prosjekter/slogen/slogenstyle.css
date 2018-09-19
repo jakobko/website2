@@ -1,0 +1,72 @@
+* {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  font-family: Nunito;
+}
+
+h1 {
+  font-size: 2em;
+}
+
+.flexcontainer {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.description{
+  margin: 40px 20px 0px 20px;
+  text-align: center;
+}
+
+.inputfield {
+  margin: 20px 20px 0px 20px;
+  display: flex;
+  align-items: center;
+  flex-flow: wrap;
+  justify-content: space-around;
+}
+
+input {
+  max-width: 80%;
+  text-align: center;
+  font-size: 1.5em;
+  padding: 10px 30px 10px 30px;
+  border-radius: 10px;
+  font-family: inherit;
+  outline: none;
+  border: 1px solid black;
+}
+
+button {
+  margin: 20px;
+  text-align: center;
+  font-size: 1em;
+  padding: 10px 30px 10px 30px;
+  border-radius: 10px;
+  font-family: inherit;
+  outline: none;
+  border: 1px solid black;
+  background-color: white;
+  box-shadow: 0px 1px 0px 0px rgba(0, 0, 0, 0.7);
+}
+
+button:hover{
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.7) 3%, rgb(255, 255, 255) 4%, rgb(255, 255, 255) 100%);
+  padding-top: 11px;
+  padding-bottom: 9px;
+  box-shadow: 0px 0px 0px 0px rgba(81, 130, 49,0.77);
+}
