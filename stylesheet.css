@@ -5,7 +5,7 @@
 }
 
 body {
-  font-family: Lato;
+  font-family: Nunito;
 }
 
 .flexcontainer {
@@ -32,6 +32,7 @@ header {
 
 .description {
   margin-top: 10px;
+  text-align: center;
 }
 
 nav {
@@ -47,12 +48,20 @@ nav a {
   margin: 10px;
   text-decoration: none;
   color: inherit;
-  border: 1px solid black;
+  border: 1px solid rgba(0, 0, 0, 0.7);
   padding: 5px 20px 5px 20px;
   border-radius: 5px;
+  box-shadow: 0px 1px 0px 0px rgba(0, 0, 0, 0.7);
 }
 
-.fa-github-square, .fa-linkedin {
+nav a:hover{
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.7) 3%, rgb(255, 255, 255) 4%, rgb(255, 255, 255) 100%);
+  padding-top: 6px;
+  padding-bottom: 4px;
+  box-shadow: 0px 0px 0px 0px rgba(81, 130, 49,0.77);
+}
+
+.fa-github-square, .fa-linkedin, .fa-file-alt {
   margin-right: 5px;
 }
 
@@ -76,7 +85,7 @@ nav a {
 }
 
 .actions a:hover {
-  background: linear-gradient(180deg, rgba(81, 130, 49,0.77) 0%, rgba(81, 130, 49,0.77) 3%, rgb(124, 196, 76) 10%, rgb(124, 196, 76) 100%);
+  background: linear-gradient(180deg, rgba(81, 130, 49,0.77) 0%, rgba(81, 130, 49,0.77) 3%, rgb(124, 196, 76) 4%, rgb(124, 196, 76) 100%);
   padding-top: 18px;
   padding-bottom: 12px;
   box-shadow: 0px 0px 0px 0px rgba(81, 130, 49,0.77);
