@@ -1,7 +1,7 @@
 var firstword = "";
 
 function apiHandler(textinput) {
-  $.getJSON("http://api.datamuse.com/words?rel_jjb="+textinput+"#callback=?")
+  $.getJSON("https://api.datamuse.com/words?rel_jjb="+textinput+"#callback=?")
 
   .done(function(data) {
     var firstword = data[0].word;
