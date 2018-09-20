@@ -19,6 +19,7 @@ function createCORSRequest(method, url){
     return xhr;
 }
 
+/*
 function api_adj_iw(input) {
   var request = createCORSRequest("get", "https://api.datamuse.com/words?rel_jjb="+input);
   if (request){
@@ -29,7 +30,7 @@ function api_adj_iw(input) {
       };
       request.send();
   }
-}
+}*/
 
 function api_adj_iw(input) {
   var request = createCORSRequest("get", "https://api.datamuse.com/words?rel_jjb="+input);
@@ -37,18 +38,20 @@ function api_adj_iw(input) {
       request.onload = function(){
           //do something with request.responseText
           var data = JSON.parse(request.responseText);
-          adj_iw = "";
-          adj_iw = data[0].word;
-          second_adj_iw = "";
-          second_adj_iw = data[1].word;
-          console.log("adj_iv: " + adj_iw);
-          console.log("second_adj_iw: " + second_adj_iw);
+          if (data[0] == null) {
+            alert("Cannot find any data on word.")
+          }
+          else {
+            adj_iw = "";
+            adj_iw = data[0].word;
+            second_adj_iw = "";
+            second_adj_iw = data[1].word;
+            console.log("adj_iv: " + adj_iw);
+            console.log("second_adj_iw: " + second_adj_iw);
 
-          // 2. steg start
-          //api_ant();
-      };
-      request.onerror = function() {
-        alert("Cannot find any data on word.")
+            // 2. steg start
+            //api_ant();
+          }
       };
       request.send();
   }
