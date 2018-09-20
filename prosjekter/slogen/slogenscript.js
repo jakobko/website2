@@ -45,8 +45,8 @@ function api_adj_iw(input) {
           console.log("second_adj_iw: " + second_adj_iw);
 
           // 2. steg start
-          api_ant();
-      }
+          //api_ant();
+      };
       request.onerror = function() {
         alert("Cannot find any data on word.")
       };
