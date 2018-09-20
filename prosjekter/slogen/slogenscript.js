@@ -43,6 +43,12 @@ function api_adj_iw(input) {
           second_adj_iw = data[1].word;
           console.log("adj_iv: " + adj_iw);
           console.log("second_adj_iw: " + second_adj_iw);
+
+          // 2. steg start
+          api_ant();
+      }
+      request.onerror = function() {
+        alert("Cannot find any data on word.")
       };
       request.send();
   }
