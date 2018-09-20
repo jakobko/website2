@@ -31,6 +31,23 @@ function api_adj_iw(input) {
   }
 }
 
+function api_adj_iw(input) {
+  var request = createCORSRequest("get", "https://api.datamuse.com/words?rel_jjb="+input);
+  if (request){
+      request.onload = function(){
+          //do something with request.responseText
+          var data = JSON.parse(request.responseText);
+          adj_iw = "";
+          adj_iw = data[0].word;
+          second_adj_iw = "";
+          second_adj_iw = data[1].word;
+          console.log("adj_iv: " + adj_iw);
+          console.log("second_adj_iw: " + second_adj_iw);
+      };
+      request.send();
+  }
+}
+
 
 /*
 // 1. steg
