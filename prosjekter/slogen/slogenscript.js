@@ -139,16 +139,10 @@ function findImage() {
   if (request){
       request.onload = function(){
         var data = JSON.parse(request.responseText);
-        //if (data.code == 403) {
-        //  alert("Error 05: Google search quota full. Return tomorrow for 100 new queries.")
-        //}
-        //else {
-          imgLink = "";
-          imgLink = data.items[0].link;
-          console.log(imgLink);
-          document.getElementById("imageresult").src = imgLink;
-        //}
-
+        imgLink = "";
+        imgLink = data.items[0].link;
+        console.log(imgLink);
+        document.getElementById("imageresult").src = imgLink;
       };
       request.send();
   }
