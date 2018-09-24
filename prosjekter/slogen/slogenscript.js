@@ -4,6 +4,7 @@ var second_adj_iw = "";
 var antonym_adj_iw = "";
 var similarmeaning_iw = "";
 var adj_similar_iw = "";
+var imgLink = "";
 
 // adj + adj + iw + , + ant + adj_similar + similar_iw
 function createCORSRequest(method, url){
@@ -26,7 +27,7 @@ function api_adj_iw(input) {
       request.onload = function(){
           var data = JSON.parse(request.responseText);
           if (data[0] == null) {
-            alert("Cannot find any data on word.")
+            alert("Error 01: Cannot find any data on word.")
           }
           else {
             adj_iw = "";
@@ -51,7 +52,7 @@ function api_ant() {
       request.onload = function(){
           var data = JSON.parse(request.responseText);
           if (data[0] == null) {
-            alert("Cannot find any data on word.")
+            alert("Error 02: Cannot find any data on word.")
           }
           else {
             antonym_adj_iw = "";
@@ -69,12 +70,12 @@ function api_ant() {
 // 3. steg
 // Here I have to find a word with a similar meaning to IW before I find an adjective.
 function api_similarmeaning() {
-  var request = createCORSRequest("get", "https://api.datamuse.com/words?ml="+iw);
+  var request = createCORSRequest("get", "https://api.datamuse.com/words?&rel_rhy="+iw);
   if (request){
       request.onload = function(){
           var data = JSON.parse(request.responseText);
           if (data[0] == null) {
-            alert("Cannot find any data on word.")
+            alert("Error 03: Cannot find any data on word.")
           }
           else {
             similarmeaning_iw = "";
@@ -97,7 +98,7 @@ function api_adj_similar_iw() {
       request.onload = function(){
           var data = JSON.parse(request.responseText);
           if (data[0] == null) {
-            alert("Cannot find any data on word.")
+            alert("Error 04: Cannot find any data on word.")
           }
           else {
             adj_similar_iw = "";
@@ -122,6 +123,22 @@ function putTogetherSlogan() {
   var textarea = document.getElementById("textresult");
   var textresult = document.createTextNode(capitalizeFirstLetter(adj_iw) + " " + second_adj_iw + " " + iw + ", " + antonym_adj_iw + " " + adj_similar_iw + " " + similarmeaning_iw + "!");
   textarea.appendChild(textresult);
+  findImage();
+}
+
+// Bildefinner
+function findImage() {
+  var request = createCORSRequest("get", "https://www.googleapis.com/customsearch/v1?key=AIzaSyA_30lBz5GnLq0G-A7FMlRLpYOOtMOl4VY&cx=002111179104835699975:3wwe6vpp61k&q="+adj_iw+"+"+iw+"&searchType=image");
+  if (request){
+      request.onload = function(){
+        var data = JSON.parse(request.responseText);
+        imgLink = "";
+        imgLink = data.items[0].link;
+        console.log(imgLink);
+        document.getElementById("imageresult").src = imgLink;
+      };
+      request.send();
+  }
 }
 
 function buttonEvent() {
