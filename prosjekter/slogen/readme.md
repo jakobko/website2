@@ -1,5 +1,5 @@
-#Slogen
-##- The slogan generator for startup
+# Slogen
+## - The slogan generator for startup
 
 Hei dette er **mye tekst**
 
