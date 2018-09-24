@@ -1,5 +1,5 @@
 # Slogen
-- The slogan generator for startups.
+"The slogan generator for startups."
 
 
 Slogen takes a word and returns a sentence built up from that word. It gets an image to add some flavour to the text.
