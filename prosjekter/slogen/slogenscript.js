@@ -19,24 +19,11 @@ function createCORSRequest(method, url){
     return xhr;
 }
 
-/*
+// 1. steg
 function api_adj_iw(input) {
   var request = createCORSRequest("get", "https://api.datamuse.com/words?rel_jjb="+input);
   if (request){
       request.onload = function(){
-          //do something with request.responseText
-          var data = JSON.parse(request.responseText);
-          console.log(data[0].word);
-      };
-      request.send();
-  }
-}*/
-
-function api_adj_iw(input) {
-  var request = createCORSRequest("get", "https://api.datamuse.com/words?rel_jjb="+input);
-  if (request){
-      request.onload = function(){
-          //do something with request.responseText
           var data = JSON.parse(request.responseText);
           if (data[0] == null) {
             alert("Cannot find any data on word.")
@@ -50,48 +37,92 @@ function api_adj_iw(input) {
             console.log("second_adj_iw: " + second_adj_iw);
 
             // 2. steg start
-            //api_ant();
+            api_ant();
           }
       };
       request.send();
   }
 }
 
-
-/*
-// 1. steg
-function api_adj_iw(textinput) {
-  $.getJSON("https://api.datamuse.com/words?rel_jjb="+textinput)
-  .done(function(data) {
-    adj_iw = "";
-    adj_iw = data[0].word;
-    second_adj_iw = "";
-    second_adj_iw = data[1].word;
-    console.log("adj_iv: " + adj_iw);
-    console.log("second_adj_iw: " + second_adj_iw);
-
-    // 2. steg start
-    api_ant();
-  })
-  .fail(function(data){
-    alert("Can't find any data on word.");
-  });
-}
-
 // 2. steg
 function api_ant() {
-  $.getJSON("https://api.datamuse.com/words?rel_ant="+adj_iw)
-  .done(function(data) {
-    antonym_adj_iw = "";
-    antonym_adj_iw = data[0].word;
-    console.log("antonym_adj_iw: " + antonym_adj_iw);
-    //api_wordsfollow_iw();
-  })
-  .fail(function(data){
-    alert("Can't find any data on word.");
-  });
+  var request = createCORSRequest("get", "https://api.datamuse.com/words?rel_ant="+adj_iw);
+  if (request){
+      request.onload = function(){
+          var data = JSON.parse(request.responseText);
+          if (data[0] == null) {
+            alert("Cannot find any data on word.")
+          }
+          else {
+            antonym_adj_iw = "";
+            antonym_adj_iw = data[0].word;
+            console.log("antonym_adj_iw: " + antonym_adj_iw);
+
+            // 3. steg start
+            api_similarmeaning();
+          }
+      };
+      request.send();
+  }
 }
-*/
+
+// 3. steg
+// Here I have to find a word with a similar meaning to IW before I find an adjective.
+function api_similarmeaning() {
+  var request = createCORSRequest("get", "https://api.datamuse.com/words?ml="+iw);
+  if (request){
+      request.onload = function(){
+          var data = JSON.parse(request.responseText);
+          if (data[0] == null) {
+            alert("Cannot find any data on word.")
+          }
+          else {
+            similarmeaning_iw = "";
+            similarmeaning_iw = data[0].word;
+            console.log("similarmeaning_iw: " + similarmeaning_iw);
+
+            // 4. steg start
+            api_adj_similar_iw();
+          }
+      };
+      request.send();
+  }
+}
+
+// 4. steg
+// Here I'll find an adjective that describes the new similarword.
+function api_adj_similar_iw() {
+  var request = createCORSRequest("get", "https://api.datamuse.com/words?rel_jjb="+similarmeaning_iw);
+  if (request){
+      request.onload = function(){
+          var data = JSON.parse(request.responseText);
+          if (data[0] == null) {
+            alert("Cannot find any data on word.")
+          }
+          else {
+            adj_similar_iw = "";
+            adj_similar_iw = data[0].word;
+            console.log("adj_similar_iw: " + adj_similar_iw);
+
+            // 5. stega start
+            putTogetherSlogan();
+          }
+      };
+      request.send();
+  }
+}
+
+function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
+// 5. steg
+// Puts together all the diferent words found and prints them to screen.
+function putTogetherSlogan() {
+  var textarea = document.getElementById("textresult");
+  var textresult = document.createTextNode(capitalizeFirstLetter(adj_iw) + " " + second_adj_iw + " " + iw + ", " + antonym_adj_iw + " " + adj_similar_iw + " " + similarmeaning_iw + "!");
+  textarea.appendChild(textresult);
+}
 
 function buttonEvent() {
   var input = document.getElementById("inputbox").value;
