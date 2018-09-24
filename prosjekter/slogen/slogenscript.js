@@ -6,8 +6,6 @@ var similarmeaning_iw = "";
 var adj_similar_iw = "";
 var imgLink = "";
 
-// 1st_adjecttive_to_original_input + 2nd_adjective_to_original_input + original_input + antonym_to_1st_adjecttive_to_original_input + adjectiv_to_rhymes_with_original_input +rhymes_with_origianl_input
-
 // Create CORS request
 function createCORSRequest(method, url){
     var xhr = new XMLHttpRequest();
