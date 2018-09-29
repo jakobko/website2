@@ -3,32 +3,39 @@
   <head>
     <meta charset="utf-8">
     <title>Jakob Køhn</title>
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <link rel="stylesheet" href="stylesheet.css">
+    <script src="script.js" charset="utf-8"></script>
+
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
+
     <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
   <body>
-    <section class="flexcontainer">
+    <section id="flexcontainerTop">
       <header>
         <section class="profilepicture">
           <img src="profileimage.png" alt="A picture of Jakob">
         </section>
         <section class="description">
           <h1>Jakob Køhn</h1>
-          <p>Dette er litt tekst om meg</p>
+          <p>jakobko@ifi.uio.no</p>
         </section>
       </header>
       <nav>
+        <button class="smallbutton" onclick="portfolioBPress()"><i class="far fa-file-alt" target="pdf-frame"></i>Portfolio</button>
         <a href="https://github.com/jakobko" target="_blank"><i class="fab fa-github-square"></i>GitHub</a>
         <a href="https://www.linkedin.com/in/jakob-k%C3%B8hn-6a711131/" target="_blank"><i class="fab fa-linkedin"></i>LinkedIn</a>
       </nav>
-      <section class="actions">
-        <a href="CV og portfolio - Jakob Køhn.pdf"><i class="far fa-file-alt" target="pdf-frame"></i>Se CV og portfolio (.pdf)</a>
-      </section>
+    </section>
+
+    <section id="flexcontainerPortfolio">
+      <div class="">
+        A little content
+      </div>
     </section>
   </body>
 </html>

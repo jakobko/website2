@@ -8,12 +8,20 @@ body {
   font-family: Nunito;
 }
 
-.flexcontainer {
+#flexcontainerTop {
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease;
+}
+
+#flexcontainerTop.transition {
+  height: 40vh;
 }
 
 header {
@@ -45,17 +53,24 @@ nav {
   justify-content: space-around;
 }
 
-nav a {
+nav a, .smallbutton{
+  font-size: inherit;
+  font-family: inherit;
+  color: inherit;
   margin: 10px;
   text-decoration: none;
-  color: inherit;
   border: 1px solid rgba(0, 0, 0, 0.7);
   padding: 5px 20px 5px 20px;
   border-radius: 5px;
   box-shadow: 0px 1px 0px 0px rgba(0, 0, 0, 0.7);
+  outline: 0;
 }
 
-nav a:hover{
+nav a:hover, .smallbutton:hover{
+  cursor:pointer;
+  font-size: inherit;
+  font-family: inherit;
+  color: inherit;
   background: linear-gradient(180deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.7) 3%, rgb(255, 255, 255) 4%, rgb(255, 255, 255) 100%);
   padding-top: 6px;
   padding-bottom: 4px;
@@ -66,6 +81,28 @@ nav a:hover{
   margin-right: 5px;
 }
 
+
+#flexcontainerPortfolio {
+  display: none;
+  opacity: 0;
+
+  -webkit-transition: all 10s ease-in;
+  -moz-transition: all 10s ease-in;
+  -o-transition: all 10s ease-in;
+  transition: all 10s ease-in;
+}
+
+#flexcontainerPortfolio.visible {
+  opacity: 1;
+  display: flex;
+  border: 1px solid black;
+  height: 400px;
+  align-items: center;
+  flex-flow: wrap;
+  justify-content: space-around;
+}
+
+/* Saved because of good looking button*/
 .actions {
   border: 0px solid blue;
   display: flex;

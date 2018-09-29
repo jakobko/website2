@@ -13,7 +13,8 @@ h1 {
 }
 
 .flexcontainer {
-  height: 100vh;
+  /*height: 100vh;*/
+  margin-top: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -82,5 +83,7 @@ button:hover{
 
 #imageresult {
   margin: 10px;
-  height: 40%;
+  max-width: 400px;
+  width: 50%;
+  min-width: 100px;
 }
