@@ -2,9 +2,14 @@
       jQuery(this).toggleClass("transition");
       console.log("Her er jeg");
 });*/
+var toggled = 0;
 
 function portfolioBPress() {
-  jQuery("#flexcontainerTop").toggleClass("transition");
-  jQuery("#flexcontainerPortfolio").toggleClass("visible");
+  if (toggled == 0) {
+    jQuery("#flexcontainerTop").toggleClass("transition");
+    jQuery("#flexcontainerPortfolio").addClass("visible");
+    toggled = 1;
+  }
+
   console.log("Her er jeg");
 }

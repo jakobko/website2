@@ -6,7 +6,26 @@
 
 body {
   font-family: Nunito;
+  /*background-color: rgba(18,18,18,1);*/
 }
+
+h1 {
+  font-size: 1.75em;
+}
+
+h2 {
+  font-size: 1.3em;
+}
+
+h3 {
+  font-size: 1em;
+  color: rgba(0,0,0,0.5);
+  margin-bottom: 10px;
+}
+p {
+  font-size: 1em;
+}
+
 
 #flexcontainerTop {
   height: 100vh;
@@ -18,10 +37,11 @@ body {
   -moz-transition: all 1s ease;
   -o-transition: all 1s ease;
   transition: all 1s ease;
+  border: 0px solid blue;
 }
 
 #flexcontainerTop.transition {
-  height: 40vh;
+  height: 400px;
 }
 
 header {
@@ -46,7 +66,7 @@ header {
 
 nav {
   border: 0px solid blue;
-  margin-top: 20px;
+  margin: 20px 0px 0px 0px;
   display: flex;
   justify-content: center;
   flex-flow: wrap;
@@ -57,10 +77,11 @@ nav a, .smallbutton{
   font-size: inherit;
   font-family: inherit;
   color: inherit;
+  background-color: inherit;
   margin: 10px;
   text-decoration: none;
   border: 1px solid rgba(0, 0, 0, 0.7);
-  padding: 5px 20px 5px 20px;
+  padding: 5px 12px 5px 12px;
   border-radius: 5px;
   box-shadow: 0px 1px 0px 0px rgba(0, 0, 0, 0.7);
   outline: 0;
@@ -84,22 +105,55 @@ nav a:hover, .smallbutton:hover{
 
 #flexcontainerPortfolio {
   display: none;
-  opacity: 0;
-
-  -webkit-transition: all 10s ease-in;
-  -moz-transition: all 10s ease-in;
-  -o-transition: all 10s ease-in;
-  transition: all 10s ease-in;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  -webkit-transition: opacity 2s ease;
+  -moz-transition: opacity 2s ease;
+  -o-transition: opacity 2s ease;
+  transition: opacity 2s ease;
 }
 
 #flexcontainerPortfolio.visible {
-  opacity: 1;
   display: flex;
-  border: 1px solid black;
-  height: 400px;
+}
+
+.subflex {
+  display: flex;
+  border: 0px solid black;
+  max-width: 80%;
+  margin-top: 0px;
+  margin-bottom: 30px;
   align-items: center;
   flex-flow: wrap;
   justify-content: space-around;
+}
+
+.card {
+  width: 300px;
+  margin: 10px;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 20px;
+  border: 1px solid rgba(0,0,0,0.3);
+  transition: all .2s ease;
+  overflow: hidden;
+}
+
+.card img {
+  margin: -20px -20px 0px -20px;
+  width: inherit;
+  height: 200px;
+  object-fit: cover;
+}
+
+.card:hover {
+  transform: scale(1.01);
+  box-shadow: 0px 0px 7px 0px rgba(0,0,0,0.2);
+}
+
+.designcards {
+  /*background-color: rgba(124, 208, 255, 0.5);*/
 }
 
 /* Saved because of good looking button*/
