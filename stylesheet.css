@@ -6,6 +6,10 @@
 
 body {
   font-family: Nunito;
+  background-image: url("mnt_bg.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: 50% 0;
   /*background-color: rgba(18,18,18,1);*/
 }
 
@@ -70,21 +74,33 @@ nav {
   display: flex;
   justify-content: center;
   flex-flow: wrap;
-  justify-content: space-around;
+  justify-content: center;
 }
 
 nav a, .smallbutton{
   font-size: inherit;
   font-family: inherit;
   color: inherit;
-  background-color: inherit;
+  background-color: white;
   margin: 10px;
+  width: 106px;
+  text-align: center;
   text-decoration: none;
   border: 1px solid rgba(0, 0, 0, 0.7);
   padding: 5px 12px 5px 12px;
   border-radius: 5px;
   box-shadow: 0px 1px 0px 0px rgba(0, 0, 0, 0.7);
   outline: 0;
+}
+
+@media screen and (max-width: 375px) {
+  nav {
+    margin: 30px 0px 0px 0px; !IMPORTANT
+  }
+
+  nav a, .smallbutton {
+    margin: 5px; !IMPORTANT
+  }
 }
 
 nav a:hover, .smallbutton:hover{
@@ -122,27 +138,32 @@ nav a:hover, .smallbutton:hover{
   display: flex;
   border: 0px solid black;
   max-width: 80%;
-  margin-top: 0px;
+  margin-top: 10px;
   margin-bottom: 30px;
   align-items: center;
   flex-flow: wrap;
-  justify-content: space-around;
+  justify-content: center;
 }
 
 .card {
+  background-color: rgba(255,255,255,1);
   width: 300px;
+  min-height: 420px;
+  height: auto;
   margin: 10px;
-  border: 1px solid black;
+  border: 0px solid black;
   border-radius: 5px;
-  padding: 20px;
-  border: 1px solid rgba(0,0,0,0.3);
+  padding-bottom: 20px;
+  border: 0px solid rgba(0,0,0,0.3);
   transition: all .2s ease;
   overflow: hidden;
 }
 
 .card img {
-  margin: -20px -20px 0px -20px;
-  width: inherit;
+  border: 0px solid blue;
+  width: 100%;
+  margin-bottom: 20px;
+  border-bottom: 0px solid rgba(0,0,0,0.3);
   height: 200px;
   object-fit: cover;
 }
@@ -152,8 +173,24 @@ nav a:hover, .smallbutton:hover{
   box-shadow: 0px 0px 7px 0px rgba(0,0,0,0.2);
 }
 
-.designcards {
-  /*background-color: rgba(124, 208, 255, 0.5);*/
+.card h2, h3, p {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+#awesomeIcon {
+  border: 0px solid blue;
+  width: 100%;
+  margin-top: 20px;
+  transform: scale(0.5);
+  margin-bottom: 20px;
+  border-bottom: 0px solid rgba(0,0,0,0.3);
+  height: 200px;
+  object-fit: contain;
+}
+
+.graphic h2 {
+  margin-bottom: 10px;
 }
 
 /* Saved because of good looking button*/
