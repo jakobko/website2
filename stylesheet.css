@@ -6,10 +6,10 @@
 
 body {
   font-family: Nunito;
-  background-image: url("mnt_bg.jpg");
+  /*background-image: url("mnt_bg.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;
-  background-position: 50% 0;
+  background-position: 50% 0;*/
   /*background-color: rgba(18,18,18,1);*/
 }
 
@@ -154,7 +154,7 @@ nav a:hover, .smallbutton:hover{
   border: 0px solid black;
   border-radius: 5px;
   padding-bottom: 20px;
-  border: 0px solid rgba(0,0,0,0.3);
+  border: 1px solid rgba(0,0,0,0.3);
   transition: all .2s ease;
   overflow: hidden;
 }
