@@ -6,11 +6,6 @@
 
 body {
   font-family: Nunito;
-  /*background-image: url("mnt_bg.jpg");
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: 50% 0;*/
-  /*background-color: rgba(18,18,18,1);*/
 }
 
 h1 {
@@ -30,6 +25,11 @@ p {
   font-size: 1em;
 }
 
+.backgroundSpace {
+  size: auto;
+  /*background: rgb(243,144,79);
+  background: linear-gradient(180deg, rgba(243,144,79,1) 0%, rgba(59,67,113,1) 100%);*/
+}
 
 #flexcontainerTop {
   height: 100vh;
@@ -137,7 +137,7 @@ nav a:hover, .smallbutton:hover{
 .subflex {
   display: flex;
   border: 0px solid black;
-  max-width: 80%;
+  max-width: 90%;
   margin-top: 10px;
   margin-bottom: 30px;
   align-items: center;
@@ -154,7 +154,7 @@ nav a:hover, .smallbutton:hover{
   border: 0px solid black;
   border-radius: 5px;
   padding-bottom: 20px;
-  border: 1px solid rgba(0,0,0,0.3);
+  border: 1px solid rgba(0,0,0,0.3); /* Bruk denne hvis hvit bakgrunn */
   transition: all .2s ease;
   overflow: hidden;
 }
